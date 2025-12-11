@@ -48,8 +48,14 @@ section header {
         figcaption {
             position: absolute;
             bottom: 0;
-
             padding: 24px;
+            z-index: 10;
+
+            .content-tag {
+                position: static;
+                margin-bottom: 8px;
+                display: inline-block;
+            }
 
             &:has(.text-lg) {
                 padding: 12px;
