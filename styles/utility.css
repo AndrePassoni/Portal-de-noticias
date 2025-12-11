@@ -10,8 +10,13 @@
 .grid-cols-2 {
     grid-template-columns: 1fr 1fr;
 }
+
 .gap-16 {
     gap: 16px;
+}
+
+.gap-32 {
+    gap: 32px;
 }
 
 .text-2xl {
