@@ -2,8 +2,7 @@
 
 Welcome to the **News Portal** repository! This is a landing page for a technology-focused news portal, developed to practice modern HTML and CSS concepts, including CSS Grid and responsive design.
 
-![Project Preview](./assets/images/Image%2001.png)
-*(Note: You can replace this image path with a real screenshot of your finished project)*
+![Project Preview](./assets/images/project-preview.png)
 
 ## 💻 About the Project
 
