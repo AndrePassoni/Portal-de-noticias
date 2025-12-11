@@ -39,6 +39,7 @@ Portal-de-noticias/
 │   ├── sections.css # Styles for specific grid areas (Featured, Weekly, AI)
 │   └── utility.css  # Utility classes (e.g., .text-2xl, .grid)
 └── index.html       # Main HTML structure
+```
 
 ## 🚀 How to Run
 
