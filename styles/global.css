@@ -42,11 +42,7 @@ h1, h2, h3 {
 
 img {
     max-width: 100%;
-}
-
-.container {
-    padding-inline: 1rem;
-    margin-inline: auto;
+    display: block;
 }
 
 main {
@@ -67,23 +63,7 @@ main {
     box-shadow: 0rem 0.25rem 1rem rgba(2, 6, 23, 0.251);
 }
 
-.desktop-only {
-    display: none;
-}
-
 @media (width >= 80em) {
-    body {
-        max-width: none;
-    }
-
-    .desktop-only {
-        display: initial;
-    }
-
-    .container {
-        max-width: 80rem;
-    }
-
     main {
         grid-template-columns: 2fr 1.4fr/*70% 30%*/;
 
@@ -91,5 +71,6 @@ main {
         "featured featured"
         "weekly weekly"
         "ai aside";
+        gap: 2rem;
     }
 }

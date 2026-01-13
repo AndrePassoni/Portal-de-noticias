@@ -22,5 +22,22 @@
     padding-block: 0.875rem;
     border: solid 1px var(--stroke-color);
     border-inline: none;
-    justify-content: space-between;
+    gap: 1.5rem;
+
+    overflow-x: auto;
+    white-space: nowrap;
+
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+#secondary::-webkit-scrollbar {
+    display: none;
+}
+
+@media (width >= 80em) {
+    #secondary {
+        justify-content: space-between;
+        overflow-x: visible;
+    }
 }
