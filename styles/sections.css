@@ -2,17 +2,28 @@ section header {
     border-top: 1px solid var(--stroke-color);
     padding-block: 0.75rem 1.5rem;
     font: var(--text-span);
+    margin-bottom: 1rem;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
     a {
-        justify-self: end;
+        display: flex;
         align-items: center;
         gap: 0.5rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        font-size: 0.75rem;
     }
 
     span {
         background-image: url(../assets/icons/ArrowRight.svg);
         width: 1rem;
         height: 1rem;
+        display: block;
+        background-size: contain;
+        background-repeat: no-repeat;
     }
 
     &:hover span {
@@ -20,15 +31,21 @@ section header {
     }
 }
 
-#featured {
-    max-width: 22.5rem;
-    grid-area: featured;
+#featured img,
+#weekly img,
+#ai img,
+#more img {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 0.25rem;
+}
 
-    img {
-        height: 100%;
-        object-fit: cover;
+#featured {
+    & img {
+        height: auto;
+        aspect-ratio: 16/9;
     }
-    
+
     .card {
         border-radius: 0.25rem;
         overflow: hidden;
@@ -70,20 +87,21 @@ section header {
 }
 
 #weekly {
-    max-width: 22.5rem;
-    grid-area: weekly;
-
-    &>div {
-        grid-template-columns: repeat(4, 292px);
+    & > div {
+        display: grid;
+        gap: 1.5rem;
     }
 
-    img {
-        height: 10rem;
+    & img {
+        height: auto;
+        aspect-ratio: 16/9;
     }
 }
 
 figure {
     position: relative;
+    display: flex;
+    flex-direction: column;
 
     .content-tag {
         position: absolute;
@@ -92,47 +110,106 @@ figure {
     }
 
     p {
-        margin-top: 0.5rem;
-        font-weight: 800;
+        margin-top: 0.75rem;
+        font-weight: 600;
     }
 }
 
 #ai {
-    max-width: 22.5rem;
-    grid-area: ai;
+    & article {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
 
-    img {
-        width: 11rem;
+    & > div {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    & img {
+        width: 5.5rem;
+        height: 5.5rem;
         aspect-ratio: 1/1;
-        object-fit: cover;
+        flex-shrink: 0;
     }
 
-    h3 {
-        margin-block: 0.5rem 0.25rem;
+    & h3 {
+        font-size: 1rem;
+        line-height: 1.4;
     }
-}
-
-aside {
-    grid-area: aside;
 }
 
 #more {
-    max-width: 22.5rem;
-    margin-top: 2rem;
+    margin-top: 3rem;
 
-    h3 {
-        margin-top: 0.5rem;
+    & > div {
+        display: grid;
+        gap: 1.5rem;
     }
-    
-    img {
+
+    & article {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    & img {
         width: 4.5rem;
+        height: 4.5rem;
         aspect-ratio: 1/1;
-        object-fit: cover;
+        flex-shrink: 0;
     }
 }
 
 @media (width >= 80em) {
-    #featured, #weekly, #ai, #more {
-        max-width: none;
+    #featured { grid-area: featured; }
+    #weekly   { grid-area: weekly; }
+    #ai       { grid-area: ai; }
+    aside     { grid-area: aside; }
+
+    #featured img {
+        height: 100%;
+        aspect-ratio: auto;
+    }
+
+    #weekly {
+        & > div {
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+        }
+
+        & img {
+            height: 10rem;
+            aspect-ratio: auto;
+        }
+    }
+
+    #ai {
+        & img {
+            width: 6rem;
+            height: 6rem;
+        }
+
+        & h3 {
+            margin-block: 0.5rem 0.25rem;
+        }
+    }
+
+    #more {
+        & img {
+            width: 4.5rem;
+            height: 4.5rem;
+        }
+
+        & h3 {
+            margin-top: 0.5rem;
+        }
+
+        & article {
+            flex-direction: row;
+            align-items: center;
+        }
     }
 }

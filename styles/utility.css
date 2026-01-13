@@ -1,9 +1,24 @@
 /* utility-first (uma classe/escopo que vai fazer apenas uma coisa)*/
+.container {
+    --max-width: 22.5rem; 
+    
+    width: 100%;
+    max-width: var(--max-width);
+    margin-inline: auto;
+    padding-inline: 1rem;
+}
+
 .grid {
     display: grid;
 }
 
+.grid-flow-col {
+    grid-auto-flow: column;
+}
 
+.grid-cols-2 {
+    grid-template-columns: 1fr;
+}
 
 .gap-16 {
     gap: 1rem;
@@ -29,12 +44,21 @@
     font: var(--text-sm);
 }
 
+.desktop-only {
+    display: none;
+}
+
 @media (width >= 80em) {
-    .grid-flow-col {
-        grid-auto-flow: column;
+    .container {
+        --max-width: 80rem; 
+    }
+
+    .desktop-only {
+        display: initial;
     }
 
     .grid-cols-2 {
+        display: grid;
         grid-template-columns: 1fr 1fr;
     }
 }
