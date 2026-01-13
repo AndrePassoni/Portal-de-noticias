@@ -1,10 +1,10 @@
 #primary {
-    padding-block: 20px;
+    padding-block: 1.25rem;
 
     div {
         display: flex;
         align-items: center;
-        gap: 8px;
+        gap: 0.5rem;
     }
 
     /* nesting css */
@@ -18,7 +18,8 @@
 }
 
 #secondary {
-    padding-block: 14px;
+    display: flex;
+    padding-block: 0.875rem;
     border: solid 1px var(--stroke-color);
     border-inline: none;
     justify-content: space-between;
